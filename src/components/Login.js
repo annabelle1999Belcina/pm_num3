@@ -21,7 +21,7 @@ class Login extends Component {
     }
     else {
       this.setState ({login: false})
-      alert("Invalid");
+      alert("Invalid Credentials");
     }
   }
 
@@ -29,15 +29,17 @@ class Login extends Component {
     const { uname,login } = this.state;
     if (!login) {
       return (
-        <div>
-          <input type="text" placeholder="Username" onChange={event => this.setState({ uname: event.target.value })} required></input>
-          <br />
-          <input type="password" placeholder="Password" onChange={event => this.setState({ pwd: event.target.value })} required></input>
-          <div>
-            <button onClick={event => this.inputHandler(event)}>Login</button>
-          </div>
-          <div>
-          </div>
+        <div class = "container">
+        <center>
+            <div class = "box">
+                <input type="text" placeholder="Username" onChange={event => this.setState({ uname: event.target.value })} required></input>
+                <br />
+                <input type="password" placeholder="Password" onChange={event => this.setState({ pwd: event.target.value })} required></input>
+                <div>
+                    <button class= "login" onClick={event => this.inputHandler(event)}>Login</button>
+                </div>
+          </div>  
+          </center>
         </div>
       );
     }
